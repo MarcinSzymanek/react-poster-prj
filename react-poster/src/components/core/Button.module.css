@@ -1,0 +1,17 @@
+.container {
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width:fit-content;
+}
+
+.button {
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 10px;
+    color:aliceblue;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: darkslateblue;
+}

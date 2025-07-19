@@ -1,0 +1,11 @@
+.container {
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width:fit-content;
+    flex-direction: column;
+    justify-items: center;
+    width:auto;
+}
+

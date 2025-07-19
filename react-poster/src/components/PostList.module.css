@@ -1,0 +1,16 @@
+.listItem {
+    list-style: none;
+    margin: 1rem;
+    height: auto;
+    border-radius: 4px;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, 15rem);
+    gap: 2rem;
+    border-radius: 4px;
+    justify-self: center;
+    justify-items: left;
+    min-width: 80vw;
+}
