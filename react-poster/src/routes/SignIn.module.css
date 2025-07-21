@@ -1,0 +1,9 @@
+.container {
+  border: 3px;
+  border-radius: 10px;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  width: 45vw;
+  box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.3);
+}

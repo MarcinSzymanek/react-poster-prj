@@ -1,0 +1,15 @@
+.form {
+  display: grid;
+  grid-template-rows: repeat(4, 2rem);
+  gap: 2rem;
+  max-width: 100%;
+  justify-content: center;
+}
+
+.textinput {
+  font-size: small;
+  border-radius: 3px;
+  border-color: transparent;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
