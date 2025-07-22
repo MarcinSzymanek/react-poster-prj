@@ -31,7 +31,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         node-version-file: './dummy-backend/package.json'
         cache: 'npm'
-        cache-dependency-file: './dummy-backend/package-lock.json'
+        cache-dependency-path: './dummy-backend/package-lock.json'
 
     - run: npm ci
     - run: npm test --if-present
