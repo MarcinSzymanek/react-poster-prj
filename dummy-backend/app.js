@@ -8,6 +8,7 @@ const {
   emailIsValid,
   passwordIsValid,
   checkEmailRegistered,
+  validateSignupData,
 } = require("./data/validation");
 
 const { getUser, getUsers, storeUsers } = require("./data/userData");
@@ -18,7 +19,7 @@ function delay(timeMs) {
 
 const app = express();
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded());
 
 app.use((req, res, next) => {
   // Attach CORS headers
@@ -63,33 +64,12 @@ app.post("/posts", async (req, res) => {
   res.status(201).json({ message: "Stored new post.", post: postData });
 });
 
-function validateSignupData(data)
-{
-  console.log("Validate data:")
-  console.log(data)
-  if(data == null) return false
-  const required = ['email', 'username', 'password']
-  for (const key of required) {
-    if(!Object.hasOwn(data, key)) {
-      console.log("Missing key: " + key)
-      return false
-    }
-  }
-
-  console.log("Values: ")
-  console.log(Object.values(data))
-  if(Object.values(data).includes(null)) return false
-
-  return true;
-}
-
 app.post("/signup", async (req, res) => {
   console.log("Post signup");
   const newUserData = req.body;
 
-  if(!validateSignupData(newUserData)) {
-    res.status(400)
-    .json({ message: "missing field", data: newUserData})
+  if (!validateSignupData(newUserData)) {
+    res.status(400).json({ message: "missing field", data: newUserData });
     return;
   }
 

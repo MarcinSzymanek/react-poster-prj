@@ -5,10 +5,14 @@
  * @returns {boolean} true if email exists in the database
  */
 function checkEmailRegistered(email, users) {
+  let result = false;
   users.forEach((element) => {
-    if (element.email === email) return false;
+    if (element.email === email) {
+      result = true;
+      return;
+    }
   });
-  return true;
+  return result;
 }
 
 /**
@@ -63,6 +67,26 @@ function passwordIsValid(password) {
   return result;
 }
 
+function validateSignupData(data) {
+  console.log("Validate data:");
+  console.log(data);
+  if (data == null) return false;
+  const required = ["email", "username", "password"];
+  for (const key of required) {
+    if (!Object.hasOwn(data, key)) {
+      console.log("Missing key: " + key);
+      return false;
+    }
+  }
+
+  console.log("Values: ");
+  console.log(Object.values(data));
+  if (Object.values(data).includes(null)) return false;
+
+  return true;
+}
+
 exports.emailIsValid = emailIsValid;
 exports.passwordIsValid = passwordIsValid;
 exports.checkEmailRegistered = checkEmailRegistered;
+exports.validateSignupData = validateSignupData;
