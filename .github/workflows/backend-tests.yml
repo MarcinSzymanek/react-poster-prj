@@ -25,5 +25,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: cd ./dummy-backend
     - run: npm ci
     - run: npm test --if-present
