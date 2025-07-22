@@ -29,7 +29,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        node-version-file: './dummy-backend/package.json'
+        node-version-file: './dummy-backend/package-lock.json'
         cache: 'npm'
 
     - run: npm ci
