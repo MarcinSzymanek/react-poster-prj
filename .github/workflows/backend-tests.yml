@@ -29,8 +29,9 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        node-version-file: './dummy-backend/package-lock.json'
+        node-version-file: './dummy-backend/package.json'
         cache: 'npm'
+        cache-dependency-file: './dummy-backend/package-lock.json'
 
     - run: npm ci
     - run: npm test --if-present
