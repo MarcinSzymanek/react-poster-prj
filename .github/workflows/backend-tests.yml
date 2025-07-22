@@ -8,19 +8,22 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  
 jobs:
   unit-tests:
     runs-on: ${{matrix.os}}
+    
+    defaults:
+      run:
+        working-directory: ./dummy-backend
     
     strategy:
       matrix:
         node-version: [20.x, 22.x]
         os: [ubuntu-latest, windows-latest]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v4
-    - run: cd ./dummy-backend
     
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
