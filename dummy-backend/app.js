@@ -11,7 +11,12 @@ const {
   validateSignupData,
 } = require("./data/validation");
 
-const { getUser, getUsers, storeUsers } = require("./data/userData");
+const {
+  getUser,
+  getUsers,
+  storeUsers,
+  deleteUser,
+} = require("./data/userData");
 
 function delay(timeMs) {
   return new Promise((resolve, reject) => setTimeout(() => resolve(), timeMs));
@@ -123,7 +128,7 @@ app.post("/signup", async (req, res) => {
   );
 
   res
-    .status(200)
+    .status(201)
     .json({ message: "User registered succesfully.", token: token });
 });
 

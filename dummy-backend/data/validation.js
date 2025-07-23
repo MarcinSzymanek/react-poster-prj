@@ -68,8 +68,6 @@ function passwordIsValid(password) {
 }
 
 function validateSignupData(data) {
-  console.log("Validate data:");
-  console.log(data);
   if (data == null) return false;
   const required = ["email", "username", "password"];
   for (const key of required) {
@@ -79,8 +77,6 @@ function validateSignupData(data) {
     }
   }
 
-  console.log("Values: ");
-  console.log(Object.values(data));
   if (Object.values(data).includes(null)) return false;
 
   return true;
