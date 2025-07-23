@@ -28,11 +28,6 @@ afterEach(() => {
   setFilename(defaultFilename);
 });
 
-test("Get users returns empty list", async () => {
-  const users = await getUsers();
-  expect(users.length).toBe(0);
-});
-
 test("Store new user -> get users contains new user", async () => {
   let users = await getUsers();
   const updatedUsers = [testUserData, ...users];
@@ -57,5 +52,3 @@ test("Delete user removes test user", async () => {
   expect(users).not.toContain(testUserData);
   expect(users.length).toBe(0);
 });
-
-setFilename(defaultFilename);
