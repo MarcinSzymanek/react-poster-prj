@@ -1,0 +1,10 @@
+{
+  "posts": [
+    {
+      "content": "This react shit is pretty cool!!!\n",
+      "author": "Marcin",
+      "id": "1"
+    },
+    { "content": "Test Post!", "author": "Admin", "id": "0" }
+  ]
+}
